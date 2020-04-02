@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d44c6b8b-9eb4-43da-8cf8-fb4dabb66703" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +20,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="hasretbicak" />
         <option value="Hasret Biçak" />
       </list>
     </option>
@@ -131,6 +131,14 @@
       <option name="presentableId" value="Default" />
       <updated>1585743432714</updated>
     </task>
+    <task id="LOCAL-00001" summary="header değişti">
+      <created>1585860949991</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585860949992</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -142,6 +150,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="722" y="71" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1585763701401" />
+    <state x="662" y="51" key="#Notifications" timestamp="1585861086607">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="662" y="51" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1585861086607" />
     <state x="333" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585752833845">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -154,10 +166,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="810" y="27" key="#views/0.0.1536.824@0.0.1536.824" timestamp="1585749301616" />
-    <state x="578" y="11" key="CommitChangelistDialog2" timestamp="1585860900665">
+    <state x="578" y="11" key="CommitChangelistDialog2" timestamp="1585860974969">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585860900665" />
+    <state x="578" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585860974969" />
     <state x="796" y="120" width="572" height="584" key="DiffContextDialog" timestamp="1585753088099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -206,9 +218,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="779" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585860364559" />
-    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585860702749">
+    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585861069167">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1585860702749" />
+    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1585861069167" />
   </component>
 </project>
