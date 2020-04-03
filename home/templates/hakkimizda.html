@@ -1,0 +1,27 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ setting.company }}'a Hoşgeldiniz {% endblock %}
+{% block keywords %} {{setting.keywords}} {% endblock %}
+{% block description %} {{setting.description}} {% endblock %}
+
+{% block head %}
+<link rel='shortcut icon' type='image/x-icon' href='{{setting.icon.url}}' />
+{% endblock %}
+
+{% block content %}
+
+<div class="stuff-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<br>
+						<br>
+						{{ setting.aboutus|safe }}
+					</div>
+				</div>
+			</div>
+        </div>
+</div>
+
+{% endblock %}
