@@ -12,17 +12,40 @@
 
 <div class="stuff-box">
 		<div class="container">
+
 			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<br>
-						<br>
-						<br>
-						{{ setting.contact|safe }}
-					</div>
+				<div class="col-md-5">
+					<br>
+					<br>
+					<br>
+
+					{% if messages %}
+					    {% for message in messages %}
+					         <div class="alert alert-{{message.tags}}" role="alert">
+								 {{ message }}
+				             </div>
+
+					    {% endfor %}
+					{% endif %}
+
+					<form action = "" method="POST">
+						{% csrf_token %}
+                        {{ form.as_p }}
+						<input type = "submit" value="GÖNDER">
+
+					</form>
+
 				</div>
+				<div class="col-md-7">
+					<br>
+					<br>
+
+					{{ setting.contact|safe }}
+
+				</div>
+
 			</div>
-        </div>
+		</div>
 </div>
 
 {% endblock %}
