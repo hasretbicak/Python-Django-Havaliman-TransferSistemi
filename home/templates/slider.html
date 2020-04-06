@@ -6,13 +6,13 @@
 
             {% for rs in sliderdata %}
 			<li class="text-center">
-
-				<img src="{{ rs.images.url }}" alt="">
+				<p>{{ rs.image.url }}</p>
+				<img src="{{ rs.image.url }}" alt="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1 class="m-b-20"> {{ rs.title }}</h1>
-							<p class="m-b-40"> {{ rs.description }} </p>
+							<h1 class="m-b-20"> {{ rs.description }}</h1>
+							<p class="m-b-40"> {{ rs.title }} </p>
 							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="/product/{{ rs.id }}">Rezervasyon</a></p>
 						</div>
 					</div>

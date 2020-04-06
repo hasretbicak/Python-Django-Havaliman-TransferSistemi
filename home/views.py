@@ -2,33 +2,32 @@ from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
-
-# Create your views here.
-import home
-from home.models import Setting, ContactFormMessage, ContactFormu
-from product.models import Product
+from home.models import *
+from product.models import *
 
 
 def index(request):
     setting = Setting.objects.get(pk=1)
     sliderdata = Product.objects.all()[:4]
     context = {'setting': setting,
-               'page': home,
+               'page': 'home',
                'sliderdata': sliderdata}
     return render(request, 'index.html', context)
+
 
 def hakkimizda(request):
     setting = Setting.objects.get(pk=1)
     context = {'setting': setting, 'page': 'hakkimizda'}
     return render(request, 'hakkimizda.html', context)
 
+
 def referanslar(request):
     setting = Setting.objects.get(pk=1)
     context = {'setting': setting, 'page': 'referanslar'}
     return render(request, 'referanslar.html', context)
 
-def iletisim(request):
 
+def iletisim(request):
     if request.method == 'POST':
         form = ContactFormu(request.POST)
         if form.is_valid():
@@ -39,7 +38,7 @@ def iletisim(request):
             data.message = form.cleaned_data['message']
             data.ip = request.META.get('REMOTE_ADDR')
             data.save()
-            messages.success(request, "Mesaajınız başarı ile gönderilmiştir. Teşekkür Ederiz.")
+            messages.success(request, "Mesajınız başarı ile gönderilmiştir. Teşekkür Ederiz.")
             return HttpResponseRedirect('/iletisim')
     setting = Setting.objects.get(pk=1)
     form = ContactFormu()
