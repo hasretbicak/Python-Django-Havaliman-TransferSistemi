@@ -9,7 +9,10 @@ from product.models import *
 def index(request):
     setting = Setting.objects.get(pk=1)
     sliderdata = Product.objects.all()[:4]
+    category = Category.objects.all()
+
     context = {'setting': setting,
+               'category': category,
                'page': 'home',
                'sliderdata': sliderdata}
     return render(request, 'index.html', context)
@@ -17,13 +20,19 @@ def index(request):
 
 def hakkimizda(request):
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting, 'page': 'hakkimizda'}
+    category = Category.objects.all()
+    context = {'setting': setting,
+               'category': category,
+               'page': 'hakkimizda'}
     return render(request, 'hakkimizda.html', context)
 
 
 def referanslar(request):
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting, 'page': 'referanslar'}
+    category = Category.objects.all()
+    context = {'setting': setting,
+               'category': category,
+               'page': 'referanslar'}
     return render(request, 'referanslar.html', context)
 
 
@@ -41,6 +50,17 @@ def iletisim(request):
             messages.success(request, "Mesajınız başarı ile gönderilmiştir. Teşekkür Ederiz.")
             return HttpResponseRedirect('/iletisim')
     setting = Setting.objects.get(pk=1)
+    category = Category.objects.all()
     form = ContactFormu()
-    context = {'setting': setting, 'form': form}
+    context = {'setting': setting,
+               'category': category,
+               'form': form}
     return render(request, 'iletisim.html', context)
+
+def category_products(request, id, slug):
+    category = Category.objects.all()
+    products = Product.objects.filter(category_id=id)
+    context = {'products': products,
+               'category': category,
+               }
+    return render(request, 'products.html', context)
