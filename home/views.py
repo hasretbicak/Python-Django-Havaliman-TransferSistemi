@@ -10,11 +10,19 @@ def index(request):
     setting = Setting.objects.get(pk=1)
     sliderdata = Product.objects.all()[:4]
     category = Category.objects.all()
+    dayproducts = Product.objects.all()[:15]
+    lastproducts = Product.objects.all().order_by('-id')[:4]
+    randomproducts = Product.objects.all().order_by('?')[:1]
 
     context = {'setting': setting,
                'category': category,
                'page': 'home',
-               'sliderdata': sliderdata}
+               'sliderdata': sliderdata,
+               'dayproducts': dayproducts,
+               'lastproducts': lastproducts,
+               'randomproduct': randomproducts,
+
+               }
     return render(request, 'index.html', context)
 
 
@@ -59,8 +67,10 @@ def iletisim(request):
 
 def category_products(request, id, slug):
     category = Category.objects.all()
+    categorydata = Category.objects.get(pk=id)
     products = Product.objects.filter(category_id=id)
     context = {'products': products,
                'category': category,
+               'categorydata': categorydata,
                }
     return render(request, 'products.html', context)

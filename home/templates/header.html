@@ -18,16 +18,15 @@
 					    <li class="nav-item active"><a class="nav-link" href="/">Anasayfa</a></li>
 						<li class="nav-item"><a class="nav-link" href="/hakkimizda">Hakkımızda</a></li>
 						<li class="nav-item"><a class="nav-link" href="/referanslar">Referanslar</a></li>
-						<li class="nav-item"><a class="nav-link" href="/products">Araçlarımız</a></li>
 
 
 					   {% recursetree category %}
                        <li class="nav-item dropdown">
-						   <a class="nav-link dropdown-toggle" href="/category/{{ node.slug }}" id="dropdown-a" {% if not node.is_leaf_node %}  data-toggle="dropdown" aria-expanded="true" {% endif %} >{{ node.title }}</a>
+						   <a class="nav-link dropdown-toggle" href="/category/{{ node.slug }}/{{ node.id }}" id="dropdown-a" {% if not node.is_leaf_node %}  data-toggle="dropdown" aria-expanded="true" {% endif %} >{{ node.title }}</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 							{% if not node.is_leaf_node %}
                                     <ul class="children">
-										<li><a class="dropdown-item" href="/category/{{ node.slug }}">{{ children }}</a></li>
+										<li><a class="dropdown-item" href="/category/{{ node.slug }}/{{ node.id }}">{{ children }}</a></li>
                                     </ul>
                                {% endif %}
 

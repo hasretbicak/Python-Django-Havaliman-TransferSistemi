@@ -7,6 +7,7 @@ from mptt.admin import MPTTModelAdmin, DraggableMPTTAdmin
 from product.models import Category, Product, Images
 
 
+
 class ProductImageInline(admin.TabularInline):
     model = Images
     extra = 5
