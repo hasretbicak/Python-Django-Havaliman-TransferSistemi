@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
+import product
 from home.models import *
 from product.models import *
 
@@ -74,3 +75,11 @@ def category_products(request, id, slug):
                'categorydata': categorydata,
                }
     return render(request, 'products.html', context)
+
+def product_detail(request, slug, id):
+    category = Category.objects.all()
+    product = Product.objects.get(pk=id)
+    context = {'product': product,
+               'category': category,
+               }
+    return render(request, 'product_detail.html', context)
