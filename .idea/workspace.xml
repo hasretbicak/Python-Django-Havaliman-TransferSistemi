@@ -255,10 +255,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="268" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1586873204155" />
-    <state x="578" y="11" key="CommitChangelistDialog2" timestamp="1586959900290">
+    <state x="578" y="11" key="CommitChangelistDialog2" timestamp="1586959988663">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586959900290" />
+    <state x="578" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586959988663" />
     <state x="796" y="120" width="572" height="584" key="DiffContextDialog" timestamp="1585753088099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -307,17 +307,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1586448146138" />
-    <state x="662" y="125" key="Vcs.Push.Dialog.v2" timestamp="1586959903320">
+    <state x="662" y="125" key="Vcs.Push.Dialog.v2" timestamp="1586959996584">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="662" y="125" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586959903320" />
+    <state x="662" y="125" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586959996584" />
     <state x="482" y="220" key="com.intellij.ide.util.TipDialog" timestamp="1586188920910">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="482" y="220" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586188920910" />
-    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586959863531">
+    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586960129333">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1586959863531" />
+    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1586960129333" />
   </component>
 </project>
