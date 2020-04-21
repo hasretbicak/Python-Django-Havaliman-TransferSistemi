@@ -1,6 +1,8 @@
+from ckeditor_uploader.forms import SearchForm
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+
 
 import product
 from home.models import *
@@ -17,6 +19,7 @@ def index(request):
 
     context = {'setting': setting,
                'category': category,
+               'product': product,
                'page': 'home',
                'sliderdata': sliderdata,
                'dayproducts': dayproducts,
@@ -79,7 +82,24 @@ def category_products(request, id, slug):
 def product_detail(request, slug, id):
     category = Category.objects.all()
     product = Product.objects.get(pk=id)
+    images = Images.objects.filter(product_id=id)
+    comments = Comment.objects.filter(product_id=id, status='True')
     context = {'product': product,
                'category': category,
+               'images': images,
+               'comments': comments,
                }
     return render(request, 'product_detail.html', context)
+
+def product_search(request):
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            category = Category.objects.all()
+            query = form.cleaned_data['query']
+            products = Product.objects.filter(title__icontains=query)
+            context = {'products': products,
+                       'category': category,
+            }
+            return render(request, 'products_search.html', context)
+    return HttpResponseRedirect('/')

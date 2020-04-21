@@ -10,11 +10,11 @@
 
 {% block content %}
 
-<div class="stuff-box">
+<div class="contact-box">
 		<div class="container">
-
 			<div class="row">
 				<div class="col-md-5">
+
 					<br>
 					<br>
 					<br>
@@ -27,13 +27,16 @@
 
 					    {% endfor %}
 					{% endif %}
-
+                <div class="form-group">
 					<form action = "" method="POST">
-						{% csrf_token %}
-                        {{ form.as_p }}
-						<input type = "submit" value="GÖNDER">
+
+						      {% csrf_token %}
+                              {{ form.as_p }}
+						   <input type = "submit" class="btn btn-common" value="GÖNDER">
+
 
 					</form>
+				</div>
 
 				</div>
 				<div class="col-md-7">
