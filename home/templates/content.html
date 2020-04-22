@@ -1,6 +1,10 @@
 	<!-- Start About -->
 		    {% load static %}
 
+{% block title %} {{ setting.company }}'a Hoşgeldiniz {% endblock %}
+{% block keywords %} {{setting.keywords}} {% endblock %}
+{% block description %} {{setting.description}} {% endblock %}
+
 	<div class="about-section-box">
 		<div class="stuff-box">
 		  <div class="container">
@@ -40,6 +44,24 @@
 
 
 	<!-- End QT -->
+<script>
+
+  $(function() {
+    $("#query").autocomplete({
+      source: "/search_auto/",
+      select: function (event, ui) { //item selected
+        AutoCompleteSelectHandler(event, ui)
+      },
+      minLength: 2,
+    });
+  });
+
+  function AutoCompleteSelectHandler(event, ui)
+  {
+    var selectedObj = ui.item;
+  }
+
+</script>
 
 
 	<!-- Start Gallery -->
@@ -58,10 +80,10 @@
 
 				</div>
 				<div class="col-lg-4">
-					<form action="/search/" method="POST">
+					<form action="/search/" method="post">
 						{% csrf_token %}
 					    <div class="blog-search-form" >
-							<input name="query" placeholder="Arama" type="text">
+							<input name="query" id="query" placeholder="Arama" type="text">
 							<button class="search-btn">
 								<i class="fa fa-search" aria-hidden="true"></i>
 							</button>

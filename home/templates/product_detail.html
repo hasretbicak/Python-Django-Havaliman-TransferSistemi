@@ -30,10 +30,10 @@
 					<div class="blog-inner-details-page">
 						<div class="blog-inner-box">
 
-						</div>
+	{% for rs in comments %}					</div>
 						<div class="blog-comment-box">
 							<h3><b>Yorumlar</b></h3>
-							{% for rs in comments %}
+
 							<div class="comment-item">
 								<div class="comment-item-left">
 									<img src="images/avt-img.jpg" alt="">
@@ -48,27 +48,29 @@
 									<div class="des-l">
 										<p>{{ rs.comment }}</p>
 									</div>
-									<a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Yanıtla</a>
+									<a href="" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Yanıtla</a>
 								</div>
 							</div>
 							{% endfor %}
+							{% for rs in comments %}
 							<div class="comment-item children">
 								<div class="comment-item-left">
 									<img src="images/avt-img.jpg" alt="">
 								</div>
 								<div class="comment-item-right">
 									<div class="pull-left">
-										<a href="#">Admin</a>
+										<a href="#">{{rs.yanıtlayan}}</a>
 									</div>
 									<div class="pull-right">
-										<i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>1.30 pm</span>
+										<i class="fa fa-clock-o" aria-hidden="true"></i> <span>{{rs.yanıt_tarihi}}</span>
 									</div>
 									<div class="des-l">
-										<p>Morbi lacinia ultrices lorem id tincidunt. Cras id dui risus. Pellentesque consectetur id mi sed pharetra. Proin imperdiet gravida nisl, sit amet varius urna. In auctor.</p>
+										<p>{{rs.yanıt}}</p>
 									</div>
-									<a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
+									<a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Yanıtla</a>
 								</div>
 							</div>
+							{% endfor %}
 						</div>
 						<div class="comment-respond-box">
 							<h3>Yorumunuzu Yazın </h3>
@@ -105,6 +107,7 @@
 										{% endif %}
 									</div>
 								</form>
+
 							</div>
 						</div>
 					</div>

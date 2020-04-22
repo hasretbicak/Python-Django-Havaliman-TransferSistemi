@@ -1,16 +1,17 @@
+import json
+
 from ckeditor_uploader.forms import SearchForm
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 
-
-import product
 from home.models import *
 from product.models import *
 
 
 def index(request):
     setting = Setting.objects.get(pk=1)
+    product = Product.objects.all()[:10]
     sliderdata = Product.objects.all()[:4]
     category = Category.objects.all()
     dayproducts = Product.objects.all()[:15]
@@ -69,6 +70,7 @@ def iletisim(request):
                'form': form}
     return render(request, 'iletisim.html', context)
 
+
 def category_products(request, id, slug):
     category = Category.objects.all()
     categorydata = Category.objects.get(pk=id)
@@ -78,6 +80,7 @@ def category_products(request, id, slug):
                'categorydata': categorydata,
                }
     return render(request, 'products.html', context)
+
 
 def product_detail(request, slug, id):
     category = Category.objects.all()
@@ -91,6 +94,7 @@ def product_detail(request, slug, id):
                }
     return render(request, 'product_detail.html', context)
 
+
 def product_search(request):
     if request.method == 'POST':
         form = SearchForm(request.POST)
@@ -99,7 +103,23 @@ def product_search(request):
             query = form.cleaned_data['query']
             products = Product.objects.filter(title__icontains=query)
             context = {'products': products,
+                       'query': query,
                        'category': category,
-            }
-            return render(request, 'products_search.html', context)
+                       }
+            return render(request, 'product_search.html', context)
     return HttpResponseRedirect('/')
+
+def product_search_auto(request):
+    if request.is_ajax():
+        q = request.GET.get('term', '')
+        product = Product.objects.filter(title__icontains=q)
+        results = []
+        for rs in product:
+            product_json = {}
+            product_json = rs.title
+            results.append(product_json)
+        data = json.dumps(results)
+    else:
+        data = 'fail'
+    mimetype ='application/json'
+    return HttpResponse(data, mimetype)

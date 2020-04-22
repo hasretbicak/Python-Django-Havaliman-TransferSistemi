@@ -12,25 +12,35 @@
 <div class="stuff-box">
 		<div class="container">
 			<div class="row">
-				<table cellpadding="3" width="1200">
-					<tr>
-						<th>Image</th>
-						<th>product Name</th>
-						<th>Category</th>
-						<th>Price</th>
-					</tr>
-					{% for rs in products %}
-					<tr>
-						<td><a href="/product/{{rs.id}}/{{rs.slug}}"><img src="{{rs.image.url}}" style="..." alt=""></a></td>
-						<td><h4 class="product-name"><a href="/product/{{rs.id}}/{{rs.slug}}">{{rs.title}}</a></h4></td>
-						<td><a href="/category/{{rs.category.id}}/{{rs.category.slug}}">{{rs.category}}</a></h4></td>
-						<td><h4>${{rs.price}}</h4></td>
+				{% for rs in products %}
+					<div class="col-sm-12 col-md-4 col-lg-4">
 
-					</tr>
 
-					{% endfor %}
+					<div class="gallery-single fix">
+						<a class="lightbox" href="product/{{rs.slug}}/{{rs.id}}">
+							<img class="img-fluid" src="{{ rs.image.url }}" alt="Gallery Images" style="height:270px;">
+							<br>
+							<h2>{{rs.title}}</h2>
+							<h1>${{rs.price}}</h1>
 
-				</table>
+						</a>
+
+						<div class="why-text">
+							<h4>{{ rs.title }}</h4>
+
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="product/{{rs.slug}}/{{rs.id}}">Rezervasyon</a></p>
+
+							<h5> ${{ rs.price }}</h5>
+
+							<br>
+							<br>
+						</div>
+					</div>
+
+
+
+					</div>
+                  {% endfor %}
 			</div>
         </div>
 </div>
