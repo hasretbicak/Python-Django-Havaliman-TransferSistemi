@@ -2,9 +2,11 @@ import json
 
 from ckeditor_uploader.forms import SearchForm
 from django.contrib import messages
+from django.contrib.auth import logout, authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 
+from home.forms import SignUpForm
 from home.models import *
 from product.models import *
 
@@ -94,7 +96,6 @@ def product_detail(request, slug, id):
                }
     return render(request, 'product_detail.html', context)
 
-
 def product_search(request):
     if request.method == 'POST':
         form = SearchForm(request.POST)
@@ -123,3 +124,42 @@ def product_search_auto(request):
         data = 'fail'
     mimetype ='application/json'
     return HttpResponse(data, mimetype)
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect('/')
+        else:
+            messages.warning(request, "Login Hatası! Kullanıcı Adı Ve Şifre Yanlış.")
+            return HttpResponseRedirect('/login')
+
+    category = Category.objects.all()
+    context = { 'category': category
+    }
+    return render(request, 'login.html', context)
+
+def signup_view(request):
+    if request.method=='POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+             form.save()
+             username = form.cleaned_data.get('username')
+             password = form.cleaned_data.get('password1')
+             user = authenticate(username=username, password=password)
+             login(request, user)
+             return HttpResponse("/")
+
+    form = SignUpForm()
+    category = Category.objects.all()
+    context = {'category': category,
+               'form': form,
+               }
+    return render(request, 'signup.html', context)

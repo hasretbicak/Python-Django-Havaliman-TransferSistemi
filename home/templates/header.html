@@ -22,7 +22,7 @@
 
 				    <ul class="navbar-nav ml-auto">
 
-					    <li class="nav-item active"><a class="nav-link" href="/">Anasayfa</a></li>
+					    <li class="nav-item"><a class="nav-link" href="/">Anasayfa</a></li>
 						<li class="nav-item"><a class="nav-link" href="/hakkimizda">Hakkımızda</a></li>
 						<li class="nav-item"><a class="nav-link" href="/referanslar">Referanslar</a></li>
 
@@ -43,9 +43,31 @@
 
 
 						<li class="nav-item"><a class="nav-link" href="/iletisim">İletişim</a></li>
+						<li class="nav-item"><a class="nav-link" href=""></a></li>
+
+						<li class="nav-item dropdown">
+							{% if user.id is not None %}
+							<a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">{{user.first_name}}</a>
+							{% else %}
+							<a href="/login/" class="text-uppercase">Giriş</a> / <a href="/signup/" class="text-uppercase">Kayıt Ol</a>
+							{% endif %}
+							<ul class="dropdown-menu" aria-labelledby="dropdown-a">
+								<li><a class="fa fa-user-o" href="#">Hesabım</a></li>
+								<li><a class="fa fa-heart-o" href="#">İstekler</a></li>
+								<li><a class="fa fa-exchange" href="">Rezervasyonlarım</a></li>
+								<li><a class="fa fa-check" href="">Yorumlarım</a></li>
+								<li><a class="fa fa-unlock-alt" href="/logout/">Çıkış</a></li>
+
+							</ul>
+						</li>
+
 					</ul>
+
+
 				</div>
+
 			</div>
+
 		</nav>
 	</header>
 	<!-- End header -->
