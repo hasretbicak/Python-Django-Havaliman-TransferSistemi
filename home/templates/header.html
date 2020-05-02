@@ -47,17 +47,16 @@
 
 						<li class="nav-item dropdown">
 							{% if user.id is not None %}
-							<a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">{{user.first_name}}</a>
+							   <strong class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">{{user.first_name}}</strong>
 							{% else %}
 							<a href="/login/" class="text-uppercase">Giriş</a> / <a href="/signup/" class="text-uppercase">Kayıt Ol</a>
 							{% endif %}
 							<ul class="dropdown-menu" aria-labelledby="dropdown-a">
-								<li><a class="fa fa-user-o" href="#">Hesabım</a></li>
-								<li><a class="fa fa-heart-o" href="#">İstekler</a></li>
-								<li><a class="fa fa-exchange" href="">Rezervasyonlarım</a></li>
-								<li><a class="fa fa-check" href="">Yorumlarım</a></li>
-								<li><a class="fa fa-unlock-alt" href="/logout/">Çıkış</a></li>
-
+								<li><a class="fa fa-user-plus " style="color:#b3923a" href="user/"> Hesabım</a></li>
+								<li><a class="fa fa-heart-o " style="color:#b3923a" href="#">  İstekler</a></li>
+								<li><a class="fa fa-exchange " style="color:#b3923a" href="">  Rezervasyonlarım</a></li>
+								<li><a class="fa fa-check " style="color:#b3923a" href="">  Yorumlarım</a></li>
+								<li><a class="fa fa-unlock-alt " style="color:#b3923a" href="/logout/">  Çıkış</a></li>
 							</ul>
 						</li>
 
