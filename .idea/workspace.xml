@@ -2,20 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d44c6b8b-9eb4-43da-8cf8-fb4dabb66703" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/uploads/images/users/ayşe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/templates/Shopcart_products.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/migrations/0019_auto_20200503_0132.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/migrations/0020_auto_20200503_0136.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proje1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/proje1/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proje1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/proje1/urls.py" afterDir="false" />
     </list>
@@ -267,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588000525281</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="User Profile">
+      <created>1588379467029</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1588379467029</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -283,7 +294,8 @@
     <MESSAGE value="Comment - Search" />
     <MESSAGE value="Otomatik slug" />
     <MESSAGE value="Login-SignUp-Userimage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login-SignUp-Userimage" />
+    <MESSAGE value="User Profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="User Profile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="71" key="#Inspections" timestamp="1585763701401">
@@ -310,10 +322,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="268" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1586873204155" />
-    <state x="578" y="11" key="CommitChangelistDialog2" timestamp="1588000523988">
+    <state x="578" y="11" key="CommitChangelistDialog2" timestamp="1588379465840">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588000523988" />
+    <state x="578" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588379465840" />
     <state x="796" y="120" width="572" height="584" key="DiffContextDialog" timestamp="1585753088099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -362,17 +374,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1586448146138" />
-    <state x="662" y="125" key="Vcs.Push.Dialog.v2" timestamp="1588000559302">
+    <state x="662" y="125" key="Vcs.Push.Dialog.v2" timestamp="1588379470937">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="662" y="125" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588000559302" />
+    <state x="662" y="125" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588379470937" />
     <state x="482" y="220" key="com.intellij.ide.util.TipDialog" timestamp="1586188920910">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="482" y="220" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586188920910" />
-    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588379437972">
+    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588461349701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588379437972" />
+    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588461349701" />
   </component>
 </project>

@@ -20,7 +20,12 @@
 						<h1><span>{{product.category.slug}}</span> {{product.category.description}}  </h1><br>
 						<h1><b>${{product.price}}</b></h1>
 						<p> {{product.detail}}</p>
-						<a class="btn btn-lg btn-circle btn-outline-new-white" href="product/{{rs.slug}}/{{rs.id}}">Reservation</a>
+						<form  method="post">
+							{% csrf_token %}
+							<span class ="text-uppercase" style="font-size: 22px; font-color: #b3923a; "> Adet: </span>
+							<input name="quantity" style="font-size: 22px;" type="number" min="0", max="{{ product.amount}}" value="1">
+						    <a class="btn btn-lg btn-circle btn-outline-new-white" href="/order/addtocart/{{ product.id }}">Reservation</a>
+						</form>
 					</div>
 				</div>
 				<div class="col-md-12">

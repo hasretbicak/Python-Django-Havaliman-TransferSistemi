@@ -1,0 +1,137 @@
+{% extends "homebase.html" %}
+{% block title %} {{ setting.company }}'a Hoşgeldiniz {% endblock %}
+{% block keywords %} {{setting.keywords}} {% endblock %}
+{% block description %} {{setting.description}} {% endblock %}
+
+{% block head %}
+<link rel='shortcut icon' type='image/x-icon' href='{{setting.icon.url}}' />
+{% endblock %}
+
+{% block content %}
+
+<div class="stuff-box">
+		<div class="container">
+			<div class="row">
+				{% for rs in products %}
+					<div class="col-sm-12 col-md-4 col-lg-4">
+
+
+					<div class="gallery-single fix">
+						<a class="lightbox" href="product/{{rs.slug}}/{{rs.id}}">
+							<img class="img-fluid" src="{{ rs.image.url }}" alt="Gallery Images" style="height:270px;">
+							<br>
+							<h2>{{rs.title}}</h2>
+							<h1>${{rs.price}}</h1>
+
+						</a>
+
+						<div class="why-text">
+							<h4>{{ rs.title }}</h4>
+
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="product/{{rs.slug}}/{{rs.id}}">Rezervasyon</a></p>
+
+							<h5> ${{ rs.price }}</h5>
+
+							<br>
+							<br>
+						</div>
+					</div>
+
+
+
+					</div>
+                  {% endfor %}
+			</div>
+            <div class="row">
+                <div class="col-md-12">
+						<div class="order-summary clearfix">
+							<div class="section-title">
+								<h3 class="title">Order Review</h3>
+							</div>
+							<table class="shopping-cart-table table">
+								<thead>
+									<tr>
+										<th>Product</th>
+										<th></th>
+										<th class="text-center">Price</th>
+										<th class="text-center">Quantity</th>
+										<th class="text-center">Total</th>
+										<th class="text-right"></th>
+									</tr>
+								</thead>
+								<tbody>
+                                {% for rs in schopcart %}
+									<tr>
+										<td class="thumb"><img src="{{rs.product.image.url}}" alt=""></td>
+										<td class="details">
+											<a href="#">{{rs.product}}</a>
+											<ul>
+												<li><span>Size: XL</span></li>
+												<li><span>Color: Camelot</span></li>
+											</ul>
+										</td>
+										<td class="price text-center"><strong>${{ rs.product.price }}</strong><br><del class="font-weak"><small>$40.00</small></del></td>
+                                        <td class="qty text-center"><strong>{{ rs.quantity }}</strong></td>
+										<td class="total text-center"><strong class="primary-color">${{ rs.amount }}</strong></td>
+										<td class="text-right"><button class="main-btn icon-btn"><a herf="/order/deletefromcart/{{ rs.id }}" class="fa fa-close"></a></button></td>
+									</tr>
+                                {% endfor %}
+									<tr>
+										<td class="thumb"><img src="./img/thumb-product01.jpg" alt=""></td>
+										<td class="details">
+											<a href="#">Product Name Goes Here</a>
+											<ul>
+												<li><span>Size: XL</span></li>
+												<li><span>Color: Camelot</span></li>
+											</ul>
+										</td>
+										<td class="price text-center"><strong>$32.50</strong></td>
+										<td class="qty text-center"><input class="input" type="number" value="1"></td>
+										<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
+										<td class="text-right"><button class="main-btn icon-btn"><i class="fa fa-close"></i></button></td>
+									</tr>
+									<tr>
+										<td class="thumb"><img src="./img/thumb-product01.jpg" alt=""></td>
+										<td class="details">
+											<a href="#">Product Name Goes Here</a>
+											<ul>
+												<li><span>Size: XL</span></li>
+												<li><span>Color: Camelot</span></li>
+											</ul>
+										</td>
+										<td class="price text-center"><strong>$32.50</strong></td>
+										<td class="qty text-center"><input class="input" type="number" value="1"></td>
+										<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
+										<td class="text-right"><button class="main-btn icon-btn"><i class="fa fa-close"></i></button></td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th class="empty" colspan="3"></th>
+										<th>SUBTOTAL</th>
+										<th colspan="2" class="sub-total">${{total}}</th>
+									</tr>
+									<tr>
+										<th class="empty" colspan="3"></th>
+										<th>SHIPING</th>
+										<td colspan="2">Free Shipping</td>
+									</tr>
+									<tr>
+										<th class="empty" colspan="3"></th>
+										<th>TOTAL</th>
+										<th colspan="2" class="total">$97.50</th>
+									</tr>
+								</tfoot>
+							</table>
+							<div class="pull-right">
+								<button class="primary-btn">Place Order</button>
+							</div>
+						</div>
+
+					</div>
+
+            </div>
+        </div>
+</div>
+
+{% endblock %}
