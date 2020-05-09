@@ -24,7 +24,7 @@
 							{% csrf_token %}
 							<span class ="text-uppercase" style="font-size: 22px; font-color: #b3923a; "> Adet: </span>
 							<input name="quantity" style="font-size: 22px;" type="number" min="0", max="{{ product.amount}}" value="1">
-						    <a class="btn btn-lg btn-circle btn-outline-new-white" href="/order/addtocart/{{ product.id }}">Reservation</a>
+						    <a class="btn btn-lg btn-circle btn-outline-new-white" href="/order/addtocart/{{ product.id }}">Rezervasyon</a>
 						</form>
 					</div>
 				</div>
@@ -77,8 +77,10 @@
 							</div>
 							{% endfor %}
 						</div>
+
 						<div class="comment-respond-box">
-							<h3>Yorumunuzu Yazın </h3>
+
+
 							{% if messages %}
 							   {% for message in messages %}
 							      <div class="alert alert-{{message.tags}}" role="alert">
@@ -87,6 +89,7 @@
 							    {% endfor %}
 
 							{% endif %}
+							<h3>Yorumunuzu Yazın </h3>
 							<div class="comment-respond-form">
 								<form id="commentrespondform" class="comment-form-respond row" action="/product/addcomment/{{product.id}}" method="post">
 									{% csrf_token %}

@@ -8,10 +8,12 @@ from django.shortcuts import render
 
 from home.forms import SignUpForm
 from home.models import *
+from order.models import ShopCart
 from product.models import *
 
 
 def index(request):
+    current_user = request.user
     setting = Setting.objects.get(pk=1)
     product = Product.objects.all()[:10]
     sliderdata = Product.objects.all()[:4]
@@ -19,6 +21,7 @@ def index(request):
     dayproducts = Product.objects.all()[:15]
     lastproducts = Product.objects.all().order_by('-id')[:4]
     randomproducts = Product.objects.all().order_by('?')[:1]
+    request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
 
     context = {'setting': setting,
                'category': category,

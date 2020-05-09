@@ -1,5 +1,5 @@
 {% extends "homebase.html" %}
-{% block title %} {{ setting.company }}'a Hoşgeldiniz {% endblock %}
+{% block title %} Arama {% endblock %}
 {% block keywords %} {{setting.keywords}} {% endblock %}
 {% block description %} {{setting.description}} {% endblock %}
 
@@ -17,7 +17,7 @@
 
 
 					<div class="gallery-single fix">
-						<a class="lightbox" href="product/{{rs.slug}}/{{rs.id}}">
+						<a class="lightbox" href="/product/{{rs.slug}}/{{rs.id}}">
 							<img class="img-fluid" src="{{ rs.image.url }}" alt="Gallery Images" style="height:270px;">
 							<br>
 							<h2>{{rs.title}}</h2>
@@ -28,7 +28,7 @@
 						<div class="why-text">
 							<h4>{{ rs.title }}</h4>
 
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="product/{{rs.slug}}/{{rs.id}}">Rezervasyon</a></p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="/product/{{rs.slug}}/{{rs.id}}">Rezervasyon</a></p>
 
 							<h5> ${{ rs.price }}</h5>
 
