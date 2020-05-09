@@ -26,7 +26,7 @@ class ShopCart(models.Model):
 class ShopCartForm(ModelForm):
     class Meta:
         model = ShopCart
-        fields = ['quantity', 'product']
+        fields = ['quantity']
 
 class Order(models.Model):
     STATUS = (
@@ -41,7 +41,7 @@ class Order(models.Model):
     phone = models.CharField(blank=True, max_length=20)
     address = models.CharField(blank=True, max_length=150)
     city = models.CharField(blank=True, max_length=20)
-    country = models.CharField(blank=True, max_length=20, choices=STATUS)
+    country = models.CharField(blank=True, max_length=20)
     total = models.FloatField()
     status = models.CharField(choices=STATUS, default='New', max_length=10)
     ip = models.CharField(blank=True, max_length=20)

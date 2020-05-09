@@ -145,12 +145,12 @@ def login_view(request):
             return HttpResponseRedirect('/login')
 
     category = Category.objects.all()
-    context = { 'category': category
+    context = {'category': category
     }
     return render(request, 'login.html', context)
 
 def signup_view(request):
-    if request.method=='POST':
+    if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
              form.save()

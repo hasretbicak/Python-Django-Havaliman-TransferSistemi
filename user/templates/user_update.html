@@ -1,0 +1,48 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{user.first_name }} {% endblock %}
+{% block keywords %} {{setting.keywords}} {% endblock %}
+{% block description %} {{setting.description}} {% endblock %}
+
+{% block head %}
+<link rel='shortcut icon' type='image/x-icon' href='{{setting.icon.url}}' />
+{% endblock %}
+
+{% block content %}
+
+<div class="contact-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<br><br>
+					<h2 style="color:#a95900" class="title">Kullanıcı Paneli</h2>
+						{% include "user_panel.html" %}
+				</div>
+				<div class="col-md-8">
+					<br><br>
+					<div class="order-summary clearfix">
+							<div class="section-title">
+								<h2 style="color:#a95900" class="title">Kullanıcı Bilgileri</h2>
+							</div>
+					        <div class="shopping-cart-table table">
+
+						         <img style="height:70px; width:70px;" src="{{user.userprofile.image.url}}" alt="" class="thumb">
+
+					        </div>
+                            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                                <fieldset class="form-group">
+                                    {{ user_form.as_p }}
+                                    {{ profile_form.as_p }}
+                                </fieldset>
+                                <div class="form-group">
+                                    <button class="btn btn-lg btn-circle btn-outline-new-white" type="submit">Güncelle</button>
+                                </div>
+
+                            </form>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+{% endblock %}

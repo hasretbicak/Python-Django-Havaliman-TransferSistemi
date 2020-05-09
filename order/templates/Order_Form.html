@@ -1,0 +1,74 @@
+
+{% extends "homebase.html" %}
+{% block title %} Rezervasyonlar {% endblock %}
+{% block keywords %} {{setting.keywords}} {% endblock %}
+{% block description %} {{setting.description}} {% endblock %}
+
+{% block head %}
+<link rel='shortcut icon' type='image/x-icon' href='{{setting.icon.url}}' />
+{% endblock %}
+
+{% block content %}
+
+<div class="stuff-box">
+		<div class="container">
+			<div class="row">
+                <form action=" " method="post">
+				<div class="col-md-6">
+						<div class="billing-details">
+
+                                {% csrf_token %}
+							<div class="section-title">
+								<h4 class="title">Shiping Methods</h4>
+							</div>
+                            <p><label for="id_first_name">Adınz :</label>
+                                <input type="text" name="first_name" value="{{user.first_name}}" class="input" maxlength="20" ></p>
+                            <p><label for="id_last_name">Soyadınız : </label>
+                                <input type="text" name="last_name" value="{{user.last_name}}" class="input" maxlength="20" ></p>
+                            <p><label for="id_address">Adres : </label>
+                                <input type="text" name="address" value="{{profile.address}}" class="input" maxlength="150"></p>
+                            <p><label for="id_phone">Telefon : </label>
+                                <input type="text" name="first_name" value="{{profile.phone}}" class="input" maxlength="20"></p>
+                            <p><label for="id_city">Şehir :</label>
+                                <select name="city" class="input" id="id_city">
+                                    <option value="{{profile.city}}" selected>{{profile.city }} </option>
+                                    <option value="İstanbul">İstanbul</option>
+                                    <option value="Ankara">Ankara</option>
+                                    <option value="Bursa">Bursa</option>
+                                    <option value="İzmir">İzmir</option>
+                                    <option value="Aydın">Aydın</option>
+                                    <option value="Mardin">Mardin</option>
+                                </select></p>
+                            <p><label for="id_first_name">Ülke : </label>
+                                <input type="text" name="country" value="{{profile.country}}" class="input" maxlength="20"></p>
+                            <div class="pull-right">
+                                <button type="submit" class="primary-btn">Rezervasyonu Tamamla</button>
+                            </div>
+
+						</div>
+				</div>
+                <div class="col-md-6">
+                    <div class="shiping-methods">
+                        <div clas="section-title">
+                            <h4 class="title">Ödeme Bilgileri</h4>
+                        </div>
+                        <p><label for="id_first_name">Toplam : </label>
+                            <input type="text" name="total" class="input" readonly value="${{ total }}"></p>
+
+                        <p><label for="id_first_name">Kredi Kart Holder: </label>
+                            <input type="text" name="holder" class="input" value=""></p>
+                        <p><label for="id_first_name">Kredi Kart Numarası: </label>
+                            <input type="text" name="number" class="input" value=""></p>
+                        <p><label for="id_first_name">Kartın Son Kullanım Tarihi: </label>
+                            <input type="text" name="ecpdate" class="input" placeholder="mm/yy"></p>
+                        <p><label for="id_first_name">Güvenlik Kodu: </label>
+                            <input type="text" name="secnumber" class="input" value=""></p>
+
+                    </div>
+                </div>
+              </form>
+			</div>
+        </div>
+</div>
+
+{% endblock %}

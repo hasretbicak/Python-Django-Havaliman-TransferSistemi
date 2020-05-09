@@ -94,4 +94,4 @@ class UserProfile(models.Model):
 class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['phone', 'address', 'city', 'country', 'image' ]
+        fields = ['phone', 'address', 'city', 'country', 'image']

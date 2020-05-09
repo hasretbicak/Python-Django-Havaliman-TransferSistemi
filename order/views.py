@@ -1,10 +1,12 @@
-from ckeditor_uploader.utils import get_random_string
+
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
+from django.utils.crypto import get_random_string
+
 from home.models import UserProfile
 from order.models import ShopCartForm, ShopCart, OrderForm, OrderProduct, Order
 from product.models import Category, Product
@@ -16,6 +18,7 @@ def index(request):
 @login_required(login_url='/login')
 def addtocart(request, id):
     url = request.META.get('HTTP_REFERER')
+    current_user = request.user
     checkproduct = ShopCart.objects.filter(product_id=id)
     if checkproduct:
         control = 1
@@ -30,13 +33,13 @@ def addtocart(request, id):
                 data.quantity += form.cleaned_data['quantity']
                 data.save()
             else:
-                current_user = request.user
+
                 data = ShopCart()
                 data.user_id = current_user.id
                 data.product_id = id
                 data.quantity = form.cleaned_data['quantity']
                 data.save()
-        request.session['cart_items'] = ShopCart.objects.filter(user_id = current_user.id).count()
+        request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
         messages.success(request, "Aracınız rezervasyon paketine eklenmiştir.")
         return HttpResponseRedirect(url)
 
@@ -46,18 +49,17 @@ def addtocart(request, id):
             data.quantity += 1
             data.save()
         else:
-            current_user = request.user
             data = ShopCart()
             data.user_id = current_user.id
             data.product_id = id
             data.quantity = 1
             data.save()
-            request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
-            messages.success(request, "Aracınız rezervasyon paketine eklenmiştir.")
-            return HttpResponseRedirect(url)
-
-        messages.warning(request, "Hata oluştu. Lütfen Kontrol Edin!!")
+        request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
+        messages.success(request, "Aracınız rezervasyon paketine eklenmiştir.")
         return HttpResponseRedirect(url)
+
+    messages.warning(request, "Hata oluştu. Lütfen Kontrol Edin!!")
+    return HttpResponseRedirect(url)
 
 @login_required(login_url='/login')
 def shopcart(request):
@@ -67,7 +69,7 @@ def shopcart(request):
     request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
     total = 0
     for rs in schopcart:
-        total += rs.product.price*rs.quantity
+        total += rs.product.price * rs.quantity
     context = {'schopcart': schopcart,
                'category': category,
                'total': total,
@@ -89,9 +91,9 @@ def orderproduct(request):
     for rs in schopcart:
         total += rs.product.price * rs.quantity
 
-    if request.method =='POST':
+    if request.method == 'POST':
         form = OrderForm(request.POST)
-        if(form.is_valid):
+        if form.is_valid:
             data = Order()
             data.first_name = form.cleaned_data['first_name']
             data.last_name = form.cleaned_data['last_name']
@@ -121,17 +123,17 @@ def orderproduct(request):
                 detail.amount     = rs.amount
                 detail.save()
 
-            ShopCart.objects.filter(user_id = current_user.id).delete()
-            request.session['cart_items']=0
+            ShopCart.objects.filter(user_id=current_user.id).delete()
+            request.session['cart_items'] = 0
             messages.success(request, "Rezervasyon İşleminiz tamamlandı. Teşekkür Ederiz.")
-            return render(request, 'Order_complited.html', {'ordercode': ordercode, 'category': category})
+            return render(request, 'Order_Completed.html', {'ordercode': ordercode, 'category': category})
         else:
             messages.warning(request, form.errors)
             return HttpResponseRedirect("/order/orderproduct")
 
     form = OrderForm()
-    profile = UserProfile.objects.get(user_id = current_user.id)
-    context ={ 'schopcart': schopcart,
+    profile = UserProfile.objects.get(user_id=current_user.id)
+    context = {'schopcart': schopcart,
                'category': category,
                'total': total,
                'form': form,
