@@ -11,7 +11,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
 				<a class="navbar-brand" href="index.html">
-					<img src="{{setting.logo.url}}"  style="height:75px;" alt="" />
+					<img src="{{setting.logo.url}}"  style="height:65px;" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
 				  <span class="navbar-toggler-icon"></span>
@@ -59,10 +59,10 @@
 							<a href="/login/" class="text-uppercase">Giriş</a> / <a href="/signup/" class="text-uppercase">Kayıt Ol</a>
 							{% endif %}
 							<ul class="dropdown-menu" aria-labelledby="dropdown-a">
-								<li><a class="fa fa-user-plus " style="color:#b3923a" href="user/"> Hesabım</a></li>
-								<li><a class="fa fa-heart-o " style="color:#b3923a" href="#">  İstekler</a></li>
-								<li><a class="fa fa-exchange " style="color:#b3923a" href="/shopcart/">  Rezervasyonlarım</a></li>
-								<li><a class="fa fa-check " style="color:#b3923a" href="">  Yorumlarım</a></li>
+								<li><a class="fa fa-user-plus " style="color:#b3923a" href="/user"> Hesabım</a></li>
+								<li><a class="fa fa-exchange " style="color:#b3923a" href="/user/orders">  Rezervasyonlarım</a></li>
+								<li><a class="fa fa-heart-o " style="color:#b3923a" href="/user/favorits">  Favorilerim</a></li>
+								<li><a class="fa fa-check " style="color:#b3923a" href="/user/comments">  Yorumlarım</a></li>
 								<li><a class="fa fa-unlock-alt " style="color:#b3923a" href="/logout/">  Çıkış</a></li>
 							</ul>
 

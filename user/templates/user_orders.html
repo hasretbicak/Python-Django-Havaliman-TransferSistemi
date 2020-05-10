@@ -1,0 +1,58 @@
+{% extends "homebase.html" %}
+
+{% block title %} Rezervasyonlar {% endblock %}
+{% block keywords %} {{setting.keywords}} {% endblock %}
+{% block description %} {{setting.description}} {% endblock %}
+
+{% block head %}
+<link rel='shortcut icon' type='image/x-icon' href='{{setting.icon.url}}' />
+{% endblock %}
+
+{% block content %}
+
+<div class="contact-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<br><br>
+					<h2 style="color:#a95900" class="title">Kullanıcı Paneli</h2>
+						{% include "user_panel.html" %}
+				</div>
+				<div class="col-md-8">
+					<br><br>
+					<div class="order-summary clearfix">
+							<div class="section-title">
+								<h2 style="color:#a95900" class="title">Rezervasyonlarım</h2>
+							</div>
+					<table class="shopping-cart-table table">
+								<thead>
+									<tr>
+										<th class="text-left" >Id</th>
+										<th class="text-left" >Ad</th>
+										<th class="text-left" >Soyad</th>
+										<th class="text-left" >Toplam</th>
+										<th class="text-left" >Durum</th>
+										<th class="text-left" >Tarih</th>
+										<td class="text-left">Detay</td>
+									</tr>
+
+								{% for rs in orders %}
+									<tr>
+
+										<td class="text-left">{{ rs.id }}</td>
+										<td class="text-left">{{ rs.first_name }}</td>
+										<td class="text-left">{{ rs.last_name }}</td>
+										<td class="text-left">{{ rs.total}}</td>
+										<td class="text-left">{{ rs.status }}</td>
+										<td class="text-left">{{ rs.create_at }}</td>
+										<td class="text-left"><a href="/user/orderdetail/{{ rs.id }}" class="btn btn-common">Detay</a></td>
+									</tr>
+						        {% endfor %}
+					</table>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+{% endblock %}

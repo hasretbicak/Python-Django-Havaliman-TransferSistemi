@@ -18,9 +18,9 @@
 					<h2 style="color:#a95900" class="title">Kullanıcı Paneli</h2>
 						{% include "user_panel.html" %}
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-5">
 					<br><br>
-					<div class="order-summary clearfix">
+					<div class="form-group">
 							<div class="section-title">
 								<h2 style="color:#a95900" class="title">Kullanıcı Bilgileri</h2>
 							</div>
@@ -29,13 +29,13 @@
 						         <img style="height:70px; width:70px;" src="{{user.userprofile.image.url}}" alt="" class="thumb">
 
 					        </div>
-                            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                            <form method="POST" enctype="multipart/form-data" style="width: 100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box;">{% csrf_token %}
                                 <fieldset class="form-group">
                                     {{ user_form.as_p }}
                                     {{ profile_form.as_p }}
                                 </fieldset>
                                 <div class="form-group">
-                                    <button class="btn btn-lg btn-circle btn-outline-new-white" type="submit">Güncelle</button>
+                                    <button class="btn btn-common" type="submit">Güncelle</button>
                                 </div>
 
                             </form>

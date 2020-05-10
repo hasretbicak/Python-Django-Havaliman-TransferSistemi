@@ -93,7 +93,7 @@ def orderproduct(request):
 
     if request.method == 'POST':
         form = OrderForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             data = Order()
             data.first_name = form.cleaned_data['first_name']
             data.last_name = form.cleaned_data['last_name']
@@ -102,7 +102,6 @@ def orderproduct(request):
             data.phone = form.cleaned_data['phone']
             data.user_id = current_user.id
             data.total = total
-            data.ip = request.META.get('REMORE_ADDR')
             ordercode = get_random_string(5).upper()
             data.code = ordercode
             data.save()
@@ -125,7 +124,8 @@ def orderproduct(request):
 
             ShopCart.objects.filter(user_id=current_user.id).delete()
             request.session['cart_items'] = 0
-            messages.success(request, "Rezervasyon İşleminiz tamamlandı. Teşekkür Ederiz.")
+            messages.success(request, "Rezervasyon İşleminiz tamamlandı."
+                                      " İyi Yolculuklar Dileriz.")
             return render(request, 'Order_Completed.html', {'ordercode': ordercode, 'category': category})
         else:
             messages.warning(request, form.errors)

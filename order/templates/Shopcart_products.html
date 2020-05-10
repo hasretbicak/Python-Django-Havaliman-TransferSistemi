@@ -23,6 +23,14 @@
                 <div class="col-md-12">
 						<div class="order-summary clearfix">
 							<br><br>
+							{% if messages %}
+							   {% for message in messages %}
+							      <div class="alert alert-{{message.tags}}" role="alert">
+							           {{message}}
+							      </div>
+							    {% endfor %}
+
+							{% endif %}
 							<div class="section-title">
 								<h3 class="title">Rezervasyonlar</h3>
 							</div>
@@ -48,14 +56,14 @@
 										<td class="price text-center"><strong>${{ rs.product.price }}</strong><br></td>
                                         <td class="qty text-center"><strong>{{ rs.quantity }}</strong></td>
 										<td class="total text-center"><strong class="primary-color">${{ rs.amount }}</strong></td>
-										<td class="text-right"><button class="main-btn icon-btn"><a href="/order/deletefromcart/{{ rs.id }}" class="fa fa-trash"></a></button></td>
+										<td class="text-right"><button class="main-btn icon-btn"><a href="/order/deletefromcart/{{ rs.id }}" onclick="return confirm(Silmek İstediğinize Emin Misiniz?)" class="fa fa-trash"></a></button></td>
 									</tr>
                                 {% endfor %}
 
 								</tbody>
 							</table>
 							<div class="pull-right">
-								<a href="/order/orderproduct" class="btn btn-lg btn-circle btn-outline-new-white" style="color:black; ">Place Order</a>
+								<a href="/order/orderproduct" class="btn btn-common" >Place Order</a>
 							</div>
 
 						</div>

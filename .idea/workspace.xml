@@ -2,26 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d44c6b8b-9eb4-43da-8cf8-fb4dabb66703" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/order/migrations/0006_auto_20200509_1536.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/Order_Completed.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/Order_Form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/users/ayşe_nLr4tza.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/users/hasar_VaVAE1h.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/change_password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Ekran_Alıntısı.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Ekran_Alıntısı_SozUFRD.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Ekran_Alıntısı_hoWNPsj.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/logo_qn21NlD.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/users/indir.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_order_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_orders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/Order_Completed.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/Order_Completed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/Order_Form.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/Order_Form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/templates/Shopcart_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/Shopcart_products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proje1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/proje1/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/change_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
@@ -294,7 +294,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588985471691</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Ürün Silme, Listeleme, Sayma">
+      <created>1589060650059</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589060650059</updated>
+    </task>
+    <task id="LOCAL-00021" summary="User_update - password_change">
+      <created>1589060756451</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1589060756451</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -313,7 +327,8 @@
     <MESSAGE value="User Profile" />
     <MESSAGE value="Ürün Ekleme" />
     <MESSAGE value="Ürün Silme, Listeleme, Sayma" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ürün Silme, Listeleme, Sayma" />
+    <MESSAGE value="User_update - password_change" />
+    <option name="LAST_COMMIT_MESSAGE" value="User_update - password_change" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="71" key="#Inspections" timestamp="1585763701401">
@@ -340,10 +355,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="268" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1586873204155" />
-    <state x="578" y="11" key="CommitChangelistDialog2" timestamp="1589060704571">
+    <state x="578" y="11" key="CommitChangelistDialog2" timestamp="1589060755345">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589060704571" />
+    <state x="578" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589060755345" />
     <state x="796" y="120" width="572" height="584" key="DiffContextDialog" timestamp="1585753088099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -392,10 +407,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1586448146138" />
-    <state x="662" y="125" key="Vcs.Push.Dialog.v2" timestamp="1589060657030">
+    <state x="662" y="125" key="Vcs.Push.Dialog.v2" timestamp="1589060766950">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="662" y="125" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589060657030" />
+    <state x="662" y="125" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589060766950" />
     <state x="482" y="220" key="com.intellij.ide.util.TipDialog" timestamp="1586188920910">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -404,9 +419,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="836" y="124" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1589026086863" />
-    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589060743674">
+    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589126663986">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589060743674" />
+    <state x="893" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589126663986" />
   </component>
 </project>
