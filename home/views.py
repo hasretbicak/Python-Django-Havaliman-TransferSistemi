@@ -1,4 +1,5 @@
 import json
+from tkinter import Menu
 
 from ckeditor_uploader.forms import SearchForm
 from django.contrib import messages
@@ -22,6 +23,7 @@ def index(request):
     lastproducts = Product.objects.all().order_by('-id')[:4]
     randomproducts = Product.objects.all().order_by('?')[:1]
     request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
+    faq = FAQ.objects.all().order_by('ordernumber')
 
     context = {'setting': setting,
                'category': category,
@@ -31,7 +33,7 @@ def index(request):
                'dayproducts': dayproducts,
                'lastproducts': lastproducts,
                'randomproduct': randomproducts,
-
+               'faq': faq,
                }
     return render(request, 'index.html', context)
 
@@ -166,3 +168,13 @@ def signup_view(request):
                'form': form,
                }
     return render(request, 'signup.html', context)
+
+
+def faq(request):
+    category = Category.objects.all()
+    faq = FAQ.objects.all().order_by('ordernumber')
+    context = {
+        'category': category,
+        'faq': faq,
+    }
+    return render(request, 'faq.html', context)
