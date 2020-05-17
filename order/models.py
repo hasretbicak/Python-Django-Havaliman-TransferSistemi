@@ -41,6 +41,8 @@ class Order(models.Model):
     phone = models.CharField(blank=True, max_length=20)
     address = models.CharField(blank=True, max_length=150)
     city = models.CharField(blank=True, max_length=20)
+    vale = models.CharField(blank=True, max_length=20)
+    tarih = models.CharField(blank=True, max_length=20)
     country = models.CharField(blank=True, max_length=20)
     total = models.FloatField()
     status = models.CharField(choices=STATUS, default='New', max_length=10)
@@ -55,7 +57,7 @@ class Order(models.Model):
 class OrderForm(ModelForm):
     class Meta:
         model = Order
-        fields = ['first_name', 'last_name', 'address', 'phone', 'city', 'country']
+        fields = ['first_name', 'last_name', 'address', 'phone', 'city', 'country', 'vale', 'tarih']
 
 class OrderProduct(models.Model):
     STATUS = (
