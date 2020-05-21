@@ -43,7 +43,9 @@
 						<li class="nav-item">
 							<a class="nav-link" href="/shopcart/">
 								<div class="header-btns-icon">
+									{% if user.id is not None %}
 									<i class="fa fa-bell" style="color:#b3923a; height:20px; width:15px;"><span class="qty" style="color:black">{{request.session.cart_items}}</span></i>
+									{% endif %}
 								</div>
 							</a>
 						</li>

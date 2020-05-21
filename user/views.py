@@ -15,9 +15,9 @@ from user.forms import UserUpdateForm, ProfileUpdateForm
 def index(request):
     category = Category.objects.all()
     current_user = request.user
-    profile = UserProfile.objects.get(pk=current_user.id)
+    profile = UserProfile.objects.get(user_id=current_user.id)
     context = {'category': category,
-               'profile': profile,
+               'profile': profile
                }
     return render(request, 'user_profile.html', context)
 
@@ -34,7 +34,6 @@ def user_update(request):
 
     else:
          category = Category.objects.all()
-         current_user = request.user
          user_form = UserUpdateForm(instance=request.user)
          profile_form = ProfileUpdateForm(instance=request.user.userprofile)
          context = {
